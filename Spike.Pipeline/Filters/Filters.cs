@@ -13,27 +13,11 @@ namespace Spike.Pipeline
         }
     }
 
-    public class OutputResults : Filter<Order>
-    {
-        public override Order DoOperation(Order input)
-        {
-            var result = string.Format("{0}  {1:C}  {2}  {3:C}  {4:C}  {5:C}",
-                input.Name.PadRight(10),
-                input.Price,
-                input.Quantity,
-                input.Subtotal,
-                input.Tax,
-                input.Total
-                );
-            Console.WriteLine(result);
-            return input;
-        }
-    }
-
     public class CalculateTax : Filter<Order>
     {
         public override Order DoOperation(Order input)
         {
+            //if(input.Quantity < 1) throw new Exception("Too low quantity");
             return new Order(input.Name, input.Price, input.Quantity)
             {
                 Subtotal = input.Subtotal,

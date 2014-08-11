@@ -47,9 +47,9 @@
     <Compile Include="Filters\Filter.cs" />
     <Compile Include="IPump.cs" />
     <Compile Include="Order.cs" />
-    <Compile Include="OrderList.cs" />
+    <Compile Include="OrderSource.cs" />
     <Compile Include="Pipeline.cs" />
-    <Compile Include="PrefilterSink.cs" />
+    <Compile Include="OrderSink.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
